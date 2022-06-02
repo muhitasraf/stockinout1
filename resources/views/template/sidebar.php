@@ -23,7 +23,6 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <?php if ($perm->hasPerm(['show-employee'])) : ?>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt text-info"></i>
@@ -65,32 +64,30 @@
                             </li>
                         </ul>
                     </li>
-                <?php endif; ?>
-                
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt text-info"></i>
-                        <p>
-                            Activation
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>                    
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item ml-2">
-                            <a href="<?php echo route('employee_increment/employee_increment_activation');?>" class="nav-link">
-                                <i class="fa fa-arrow-right"></i>
-                                <p>Employee Increment Activation</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ml-2">
-                            <a href="<?php echo route('employee/employee_status');?>" class="nav-link">
-                                <i class="fa fa-arrow-right"></i>
-                                <p>Employee Seperation Activation</p>
-                            </a>
-                        </li>
-                    </ul>                    
-                </li>
-                <?php if ($perm->hasPerm(['show-transfer'])) : ?>
+                    
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt text-info"></i>
+                            <p>
+                                Activation
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>                    
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item ml-2">
+                                <a href="<?php echo route('employee_increment/employee_increment_activation');?>" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <p>Employee Increment Activation</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ml-2">
+                                <a href="<?php echo route('employee/employee_status');?>" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <p>Employee Seperation Activation</p>
+                                </a>
+                            </li>
+                        </ul>                    
+                    </li>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-random text-info"></i>
@@ -114,8 +111,6 @@
                             </li>
                         </ul>
                     </li>
-                <?php endif; ?>
-                <?php if ($perm->hasPerm(['show-shift-plan', 'show-shift-rule', 'show-shift-roaster', 'show-shift-manual'])) : ?>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-random text-info"></i>
@@ -160,13 +155,11 @@
                         </ul>
                     </li>
                     <li class="nav-item ml-2">
-                                <a href="<?php echo route('employee_shift_assign/create');?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Employees Shift Assign</p>
-                                </a>
-                            </li>
-                <?php endif; ?>
-                <?php if ($perm->hasPerm(['show-salary-head', 'show-salary-rule', 'show-salary', 'show-salary-process', 'show-employee-bank'])) : ?>
+                        <a href="<?php echo route('employee_shift_assign/create');?>" class="nav-link">
+                            <i class="fa fa-arrow-right"></i>
+                            <p>Employees Shift Assign</p>
+                        </a>
+                    </li>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-book text-info"></i>
@@ -176,54 +169,42 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <?php if ($perm->hasPerm('show-salary-head')) : ?>
                                 <li class="nav-item ml-2">
                                     <a href="<?php echo route('salary_head'); ?>" class="nav-link">
                                         <i class="fa fa-arrow-right"></i>
                                         <p>Salary Head </p>
                                     </a>
                                 </li>
-                            <?php endif; ?>
-                            <?php if ($perm->hasPerm('show-salary-rule')) : ?>
                                 <li class="nav-item ml-2">
                                     <a href="<?php echo route('salary_rule'); ?>" class="nav-link">
                                         <i class="fa fa-arrow-right"></i>
                                         <p>Salary Rule </p>
                                     </a>
                                 </li>
-                            <?php endif; ?>
-                            <?php if ($perm->hasPerm('show-salary')) : ?>
                                 <li class="nav-item ml-2">
                                     <a href="<?php echo route('salary'); ?>" class="nav-link">
                                         <i class="fa fa-arrow-right"></i>
                                         <p>Salary Info </p>
                                     </a>
                                 </li>
-                            <?php endif; ?>
-                            <?php if ($perm->hasPerm('create-salary-process')) : ?>
                                 <li class="nav-item ml-2">
                                     <a href="<?php echo route('salary_pre_process/create'); ?>" class="nav-link">
                                         <i class="fa fa-arrow-right"></i>
                                         <p>Salary Pre Process </p>
                                     </a>
                                 </li>
-                            <?php endif; ?>
-                            <?php if ($perm->hasPerm('create-salary-process')) : ?>
                                 <li class="nav-item ml-2">
                                     <a href="<?php echo route('salary_process/create'); ?>" class="nav-link">
                                         <i class="fa fa-arrow-right"></i>
                                         <p>Salary Process </p>
                                     </a>
                                 </li>
-                            <?php endif; ?>
-                            <?php if ($perm->hasPerm('create-salary-insert-deduct')) : ?>
                                 <li class="nav-item ml-2">
                                     <a href="<?php echo route('salary/insert_deduct'); ?>" class="nav-link">
                                         <i class="fa fa-arrow-right"></i>
                                         <p>Salary Insertion/Deduction </p>
                                     </a>
                                 </li>
-                            <?php endif; ?>
                             <li class="nav-item ml-2">
                                 <a href="<?php echo route('salary/fixed_deduct'); ?>" class="nav-link">
                                     <i class="fa fa-arrow-right"></i>
@@ -236,18 +217,14 @@
                                     <p>Variable Deduction</p>
                                 </a>
                             </li>
-                            <?php if ($perm->hasPerm('create-employee-bank')) : ?>
-                                <li class="nav-item ml-2">
-                                    <a href="<?php echo route('employee_bank/create'); ?>" class="nav-link">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <p>Employee Bank </p>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
+                            <li class="nav-item ml-2">
+                                <a href="<?php echo route('employee_bank/create'); ?>" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <p>Employee Bank </p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
-                <?php endif; ?>
-                <?php if ($perm->hasPerm(['show-leave-rule', 'show-leave-policy', 'show-leave-applications', 'show-leave-year-end'])) : ?>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-thermometer-half text-info"></i>
@@ -335,7 +312,6 @@
                             <?php endif; ?>
                         </ul>
                     </li>
-                <?php endif; ?>
                 <?php if ($perm->hasPerm(['show-punch-card', 'show-attendance', 'show-calendar'])) : ?>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
@@ -838,203 +814,6 @@
                         <?php endif; ?>
                     </ul>
                 </li>
-                <?php if ($perm->hasPerm('show-company')) : ?>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-industry text-info"></i>
-                            <p>
-                                Company Management
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <?php if ($perm->hasPerm('show-company')) : ?>
-                                <li class="nav-item ml-2">
-                                    <a href="<?php echo route('company/index'); ?>" class="nav-link">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <p>Company List </p>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
-                            <?php if ($perm->hasPerm('create-company')) : ?>
-                                <li class="nav-item ml-2">
-                                    <a href="<?php echo route('company/create'); ?>" class="nav-link">
-                                        <i class="fa fa-arrow-right"></i>
-                                        <p>New company</p>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
-                        </ul>
-                    </li>
-                    
-                <?php endif; ?>
-                <?php if ($perm->hasPerm('show-bulk-upload')) : ?>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-database text-info"></i>
-                            <p>
-                                Uploads
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('import/create'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Bulk data </p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                <?php endif; ?>
-                <?php if ($perm->hasPerm('show-settings')) : ?>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-database text-info"></i>
-                            <p>
-                                Settings
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('settings/bank'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Bank </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('settings/unit'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Unit </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('settings/designation'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Designation </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('settings/department'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Department </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('settings/section'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Section </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('settings/division'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Division </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('settings/staff-category'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Staff Category </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('settings/country'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Country </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('district'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>District </p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                <?php endif; ?>
-                <?php if ($perm->hasPerm('show-user-module')) : ?>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-database text-info"></i>
-                            <p>
-                                User Module
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('employee/add'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>New Employee </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('apply_leave/create'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Apply Leave </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('attendance/manual'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Attendance Manual </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('reports/leave/transaction'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Leave Transaction</p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('reports/leave/summary'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Leave Summary</p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('reports/attendance/monthly_attendance'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Monthly attendance </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('reports/employee/bio_data'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Bio Data </p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('reports/employee/datewise_new'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Employee List</p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('reports/employee/total_summary'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Total employee summary</p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('reports/employee/separated'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>Separated Employee</p>
-                                </a>
-                            </li>
-                            <li class="nav-item ml-2">
-                                <a href="<?php echo route('reports/employee/id_card'); ?>" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i>
-                                    <p>ID Card</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                <?php endif; ?>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
